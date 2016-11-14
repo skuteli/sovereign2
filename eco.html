@@ -1,0 +1,36 @@
+<html>
+<head>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="state-machine.min.js"></script>
+<script src="agent.js"></script>
+<script src="world.js"></script>
+<script src="main.js"></script>
+<style>
+    .chieftain {color:red;}
+    .gatherer {color:green;}
+    .hunter {color:brown;}
+</style>
+</head>
+<body>
+    Minimalna Ekonomia:
+    Mała wyspa. Jedyny zasób: ziemia.
+    Brak prawa własności.
+    Stała wydajność pracy - bez względu na ilość zasobów.
+    Więcej ziemi niż ludzi.
+    Stała populacja.
+    Każdy może dowolnie szybko przemieścić się gdziekolwiek.
+    <div id="app">
+    <h3>Ilość ciapków: {{ agents.length }}</h3>
+    <button v-on:click="addChieftain">Add Chieftain</button>
+    <button v-on:click="addGatherer">Add Gatherer</button>
+
+    <div class="agent" v-for="agent in agents">
+      <span :class="agent.constructor.name">
+        {{ agent.constructor.name }}
+         hp: {{ agent.hp }} 
+         </span>
+    </div>
+    </div>
+</body>
+</html>
