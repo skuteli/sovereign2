@@ -18,8 +18,10 @@
     Brak prawa własności.
     Stała wydajność pracy - bez względu na ilość zasobów.
     Więcej ziemi niż ludzi.
-    Stała populacja.
     Każdy może dowolnie szybko przemieścić się gdziekolwiek.
+    Tezy:
+    Rozmnażanie jest związane z okresem trenowania
+    Zamodelować przejście geograficzne przy pomocy specjalizacji.
     <div id="app">
     <h3>Ilość ciapków: {{ agents.length }}</h3>
     <button v-on:click="addChieftain">Add Chieftain</button>
@@ -28,6 +30,7 @@
     <div class="agent" v-for="agent in agents">
       <span :class="agent.constructor.name">
         {{ agent.constructor.name }}
+        state: {{ agent.state.current }}
          hp: {{ agent.hp }} 
          </span>
     </div>
